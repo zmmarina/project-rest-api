@@ -1,0 +1,1074 @@
+{
+	"info": {
+		"_postman_id": "035b8154-4062-4a85-a5c0-67381dad8218",
+		"name": "DesafioAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delegaciaListarTodas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegacia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegacia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegaciaEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegacia/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegacia",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegaciaCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"endereco\": {\r\n        \"rua\" : \"rua da felicidade\",\r\n        \"numero\" : \"25\",\r\n        \"cidade\" : \"olinda\",\r\n        \"estado\" : \"alegria\",\r\n        \"cep\" : \"08090-287\"\r\n    },\r\n    \"telefone\" : \"888777985\",\r\n    \"batalhao\" : \"felicidade\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/delegacia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegacia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegaciaAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"endereco\": {\r\n        \"rua\" : \"avenida muito bonita\",\r\n        \"numero\" : \"25\",\r\n        \"cidade\" : \"olinda\",\r\n        \"estado\" : \"felicidade\",\r\n        \"cep\" : \"08090-287\"\r\n    },\r\n    \"telefone\" : \"888777985\",\r\n    \"batalhao\" : \"amor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/delegacia/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegacia",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegaciaDeletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegacia/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegacia",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegadoListarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegadoListarOrdemAsc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegado/asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegado",
+						"asc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegadoListaOrdemDesc",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegado/desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegado",
+						"desc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegadoEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegado/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegado",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegadoCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Joao Coelho\",\r\n    \"delegacia\" : {\r\n        \"id\" : 2\r\n    },\r\n    \"funcional\" : \"271r260\",\r\n    \"turno\" : \"NOITE\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/delegado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegadoAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Joao MUDEI Coelho\",\r\n    \"delegacia\" : {\r\n        \"id\" : 2\r\n    },\r\n    \"funcional\" : \"0002135\",\r\n    \"turno\" : \"NOITE\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/delegado/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegado",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delegadoDeletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/delegado/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"delegado",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policialListarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/policial",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policialEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/policial/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policial",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policialProcurarPorNome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/policial/nome/joao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policial",
+						"nome",
+						"joao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policialCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Abigail Camposo\",\r\n    \"funcional\" : \"650643\",\r\n    \"patente\" : \"SOLDADO\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/policial",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policialAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Joao MddUDEI NOME\",\r\n    \"funcional\" : \"5643\",\r\n    \"patente\" : \"SOLDADO\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/policial/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policial",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policialDeletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/policial/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"policial",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criminosoListarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/criminoso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criminoso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criminosoEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/criminoso/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criminoso",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criminosoCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Rui Rota\",\r\n    \"cpf\" : \"07593446476\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/criminoso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criminoso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criminosoAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Rui MUDEI Rota\",\r\n    \"cpf\" : \"07593446476\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/criminoso/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criminoso",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criminosoDeletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/criminoso/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criminoso",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vitimaListarTodas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vitima",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vitima"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vitimaEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vitima/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vitima",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vitimaCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Maria Silva\",\r\n    \"cpf\" : \"90916610039\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vitima",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vitima"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vitimaAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Maria deee Silva\",\r\n    \"cpf\" : \"90916610039\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vitima/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vitima",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vitimaDeletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vitima/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vitima",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "legistaListarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/legista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "legistaEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/legista/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legista",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "legistaCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Mariana Silva\",\r\n    \"crm\" : \"9917710039\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/legista",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "legistaAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\" : \"Marta Mudei Silva\",\r\n    \"crm\" : \"90916610039\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/legista/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legista",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "legistaDeletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/legista/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"legista",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autopsiaListarTodas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/autopsia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autopsia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autopsiaEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/autopsia/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autopsia",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autopsiaCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vitima\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"legista\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"date\" : \"2020-07-21\",\r\n    \"laudo\" : {\r\n        \"causa\" : \"perda de sangue\",\r\n        \"forma\" : \"arma de fogo\",\r\n        \"detalhes\" : \"a vítima não sofreu\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/autopsia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autopsia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autopsiaAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vitima\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"legista\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"date\" : \"2020-07-21\",\r\n    \"laudo\" : {\r\n        \"causa\" : \"perda de sangue\",\r\n        \"forma\" : \"arma de fogo\",\r\n        \"detalhes\" : \"a vítima não sofreu muito\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/autopsia/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autopsia",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crimeListarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/crime",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crimeEncontrarPorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/crime/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crime",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crimeCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"criminoso\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"vitima\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"date\" : \"2020-07-21\",\r\n    \"descricao\" : \"furto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/crime",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crimeAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"criminoso\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"vitima\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"date\" : \"2020-08-21\",\r\n    \"descricao\" : \"furto leve\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/crime/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crime",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crimeDeletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/crime/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"crime",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prisaoListarTodas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prisao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prisao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prisaoEncontrarPorID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/prisao/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prisao",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prisaoCriar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vitima\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"policial\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"criminoso\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"date\" : \"2020-07-21\",\r\n    \"delegacia\" : {\r\n        \"id\" : 2\r\n    },\r\n    \"delegado\" : {\r\n        \"id\" : 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prisao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prisao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prisaoAtualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vitima\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"policial\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"criminoso\" : {\r\n        \"id\" : 1\r\n    },\r\n    \"date\" : \"2020-07-24\",\r\n    \"delegacia\" : {\r\n        \"id\" : 2\r\n    },\r\n    \"delegado\" : {\r\n        \"id\" : 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/prisao/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"prisao",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
