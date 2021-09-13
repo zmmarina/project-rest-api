@@ -1,8 +1,8 @@
 package com.gft.desafioapi.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -43,16 +43,12 @@ public class CriminosoController {
 	
 	@GetMapping
 	@PreAuthorize("hasAuthority('JUIZ') or hasAuthority('ADVOGADO')")
-	public List<CriminosoDTO> listarCriminosos(){
+	public ResponseEntity<List<CriminosoDTO>> listarCriminosos(){
 		
-		List<CriminosoDTO> criminosoDTOLista = new ArrayList<>();
 		List<Criminoso> criminosoLista = criminosoRepository.findAll();
+		List<CriminosoDTO> criminosoDTOLista = criminosoLista.stream().map(x -> CriminosoDTO.from(x)).collect(Collectors.toList());
 		
-		for(Criminoso criminoso : criminosoLista) {
-			CriminosoDTO criminosoDTO = CriminosoDTO.from(criminoso);
-			criminosoDTOLista.add(criminosoDTO);
-		}
-		return criminosoDTOLista;
+		return !criminosoDTOLista.isEmpty() ? ResponseEntity.ok(criminosoDTOLista) : ResponseEntity.notFound().build();
 	}
 	
 	@GetMapping("/{id}")

@@ -1,8 +1,8 @@
 package com.gft.desafioapi.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -41,16 +41,12 @@ public class AutopsiaController {
 	
 	@GetMapping
 	@PreAuthorize("hasAuthority('DELEGADO') or hasAuthority('ADVOGADO')")
-	public List<AutopsiaDTO> listarAutopsias(){
+	public ResponseEntity<List<AutopsiaDTO>> listarAutopsias(){
 		
-		List<AutopsiaDTO> autopsiaDTOLista = new ArrayList<>();
 		List<Autopsia> autopsiaLista = autopsiaRepository.findAll();
+		List<AutopsiaDTO> autopsiaDTOLista = autopsiaLista.stream().map(x -> AutopsiaDTO.from(x)).collect(Collectors.toList());
 		
-		for(Autopsia autopsia : autopsiaLista) {
-			AutopsiaDTO autopsiaDTO = AutopsiaDTO.from(autopsia);
-			autopsiaDTOLista.add(autopsiaDTO);
-		}
-		return autopsiaDTOLista;
+		return !autopsiaDTOLista.isEmpty() ? ResponseEntity.ok(autopsiaDTOLista) : ResponseEntity.notFound().build();
 	}
 	
 	@GetMapping("/{id}")

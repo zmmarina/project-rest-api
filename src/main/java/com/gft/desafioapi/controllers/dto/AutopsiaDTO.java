@@ -20,8 +20,7 @@ public class AutopsiaDTO {
 	
 	
 	public AutopsiaDTO() {}
-
-
+	
 	public AutopsiaDTO(Long id, Long idVitima, String nomeVitima, String cpfVitima, Long idLegista, String crmLegista,
 			LocalDate date, String causa, String forma, String detalhes) {
 		this.id = id;

@@ -1,8 +1,8 @@
 package com.gft.desafioapi.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -40,16 +40,12 @@ public class PrisaoController {
 	private ApplicationEventPublisher publisher;
 	
 	@GetMapping
-	public List<PrisaoDTO> listarPrisaos(){
+	public ResponseEntity<List<PrisaoDTO>> listarPrisaos(){
 		
-		List<PrisaoDTO> prisaoDTOLista = new ArrayList<>();
 		List<Prisao> prisaoLista = prisaoRepository.findAll();
+		List<PrisaoDTO> prisaoDTOLista = prisaoLista.stream().map(x -> PrisaoDTO.from(x)).collect(Collectors.toList());
 		
-		for(Prisao prisao : prisaoLista) {
-			PrisaoDTO prisaoDTO = PrisaoDTO.from(prisao);
-			prisaoDTOLista.add(prisaoDTO);
-		}
-		return prisaoDTOLista;
+		return !prisaoDTOLista.isEmpty() ? ResponseEntity.ok(prisaoDTOLista) : ResponseEntity.notFound().build();
 	}
 	
 	@GetMapping("/{id}")
